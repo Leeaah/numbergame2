@@ -1,4 +1,5 @@
 @echo off
+Title tast
 Title Downloading game files
 set /a leaderboard=0
 set /a guess=0
@@ -173,7 +174,7 @@ goto start
 cls
 ECHO         Achievement Unlocked!
 echo.
-echo                :c
+type "%UserProfile%\OneDrive\numbergame\Leah's Projects\RNG.txt"
 echo.
 echo         RNG's a Bitch!
 echo.
