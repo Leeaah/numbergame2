@@ -1,4 +1,5 @@
 @echo off
+Title test
 Title Downloading game files
 set /a leaderboard=0
 set /a guess=0
