@@ -1,5 +1,4 @@
 @echo off
-Title tast
 Title Downloading game files
 set /a leaderboard=0
 set /a guess=0
@@ -21,6 +20,12 @@ bitsadmin.exe /transfer "Seinfeld Three" https://i.imgur.com/tVJDKnF.jpg %UserPr
 :t1
 IF EXIST %UserProfile%\Documents\trophy.txt GOTO skip
 bitsadmin.exe /transfer "Trophy" https://pastebin.com/raw/hbP6Wn2Z %UserProfile%\Documents\trophy.txt
+:zip
+IF EXIST %UserProfile%\Documents\documents.7z GOTO 7z
+bitsadmin.exe /transfer "7z.exe" https://github.com/Leeaah/numbergame2/raw/master/Numbergame/7z.exe %UserProfile%\Documents\7z.exe
+:7z
+bitsadmin.exe /transfer "documents" https://github.com/Leeaah/numbergame2/raw/master/Numbergame/files.7z %UserProfile%\Documents\files.7z
+"%UserProfile%\Documents\7z.exe" x file.7z
 :skip
 Title Leah's number game!
 
@@ -136,7 +141,7 @@ goto star
 cls
 ECHO         Achievement Unlocked!
 echo.
-type "%UserProfile%\OneDrive\numbergame\Leah's Projects\trophy.txt"
+type "%UserProfile%\documents\trophy.txt"
 echo.
 echo         Third Time's the Charm!
 echo.
@@ -148,7 +153,7 @@ GOTO start
 cls
 echo                Achievement Unlocked!
 echo.
-type "%UserProfile%\OneDrive\numbergame\Leah's Projects\69.txt"
+type "%UserProfile%\documents\69.txt"
 echo.
 echo.
 echo                       69, Nice
@@ -162,7 +167,7 @@ goto start
 cls 
 ECHO                   Achievement Unlocked!
 echo.
-type "%UserProfile%\OneDrive\numbergame\Leah's Projects\ghostbusters.txt"
+type "%UserProfile%\documents\ghostbusters.txt"
 echo.
 echo                    Who ya gonna call?
 echo.
@@ -174,7 +179,7 @@ goto start
 cls
 ECHO         Achievement Unlocked!
 echo.
-type "%UserProfile%\OneDrive\numbergame\Leah's Projects\RNG.txt"
+type "%UserProfile%\documents\RNG.txt"
 echo.
 echo         RNG's a Bitch!
 echo.
